@@ -49,3 +49,32 @@ const course = {
 };
 
 console.log(typeof course);
+
+// toinen esimerkki
+
+const arto = {
+  name: "Arto Hellas",
+  age: 35,
+  education: "Filosofian tohtori",
+  greet: function () {
+    console.log("hello, my name is", this.name);
+  },
+};
+
+arto.growOlder = function () {
+  this.age += 1;
+};
+
+console.log(arto.age); // tulostuu 35
+arto.growOlder();
+console.log(arto.age); // tulostuu 36
+
+setTimeout(arto.greet, 1000); // hello, my name is undefined
+
+// ongelma ratkaistu jos käyttää bind metodia
+
+setTimeout(arto.greet.bind(arto), 1000);
+// sekunnin päästä tulostuu hello, my name is Arto Hellas
+/*  Komento arto.greet.bind(arto) luo uuden funktion, 
+    jossa this on sidottu tarkoittamaan Artoa riippumatta siitä, 
+    missä ja miten metodia kutsutaan. */

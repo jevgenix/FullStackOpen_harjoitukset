@@ -1,4 +1,3 @@
-const { response } = require("express");
 const express = require("express");
 const app = express();
 
@@ -48,7 +47,7 @@ app.get("/api/notes/:id", (req, res) => {
     res.json(note);
   } else {
     // not found
-    response.status(404).end();
+    res.status(404).end();
   }
 });
 
@@ -56,7 +55,7 @@ app.delete("/api/notes/:id", (req, res) => {
   const id = Number(req.params.id);
   notes = notes.filter((note) => note.id !== id);
   // no data sended
-  response.status(204).end();
+  res.status(204).end();
 });
 
 const generateId = () => {

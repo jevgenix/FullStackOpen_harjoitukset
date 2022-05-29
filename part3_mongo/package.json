@@ -1,0 +1,15 @@
+{
+  "name": "part3-mongo",
+  "version": "1.0.0",
+  "description": "mongodb harjoitus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jevgenix",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^6.3.4"
+  },
+  "devDependencies": {}
+}
